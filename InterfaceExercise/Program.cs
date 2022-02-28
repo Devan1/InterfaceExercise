@@ -41,20 +41,34 @@ namespace InterfaceExercise
             //Now, create objects of your 3 classes and give their members values;
             //Creatively display and organize their values
 
-            Truck firstTruck = new Truck { Make = "Toyota", Color = "Silver", Model = "Tundra", Year = "2006" };
-            Car firstCar = new Car { Make = "Chevy", Color = "Black", Model = "Impala", Year = "2008" };
-            Suv firstSuv = new Suv { Make = "Chevy", Color = "Blue", Model = "Trailblazer", Year = "2005" };
+            Truck firstTruck = new Truck { Make = "Toyota", Color = "Silver", Model = "Tundra", Year = "2006", Logo = "Toyota", YearCompanyEstablished = "1937" };
+            Car firstCar = new Car { Make = "Chevy", Color = "Black", Model = "Impala", Year = "2008", Logo = "A smushed cross", YearCompanyEstablished = "1911" };
+            Suv firstSuv = new Suv { Make = "Chevy", Color = "Blue", Model = "Trailblazer", Year = "2005", Logo = "A smushed cross", YearCompanyEstablished = "1911" };
 
-            List<ICompany> vehicles = new List<ICompany>();
+            List<Truck> trucks = new List<Truck>();
+            List<Car> cars = new List<Car>();
+            List<Suv> suvs = new List<Suv>();            
 
-            vehicles.Add(firstTruck);
-            vehicles.Add(firstCar);
-            vehicles.Add(firstSuv);
+            trucks.Add(firstTruck);
+            cars.Add(firstCar);
+            suvs.Add(firstSuv);
 
-            foreach(IVehicle vehicle in vehicles)
+            foreach (var Truck in trucks)
             {
-                Console.WriteLine($"Year: {vehicle.Year}\nMake: {vehicle.Make}\nModel: {vehicle.Model}\nColor: {vehicle.Color}");
-                vehicle.Drive();
+                Console.WriteLine($"Year the Company was established: {Truck.YearCompanyEstablished}\nYear: {Truck.Year}\nMake: {Truck.Make}\nModel: {Truck.Model}\nColor: {Truck.Color}\nLogo: {Truck.Logo}");
+                Truck.Drive();
+                Console.WriteLine();
+            }
+            foreach (var Car in cars)
+            {
+                Console.WriteLine($"Year the Company was established: {Car.YearCompanyEstablished}\nYear: {Car.Year}\nMake: {Car.Make}\nModel: {Car.Model}\nColor: {Car.Color}\nLogo: {Car.Logo}");
+                Car.Drive();
+                Console.WriteLine();
+            }
+            foreach (var Suv in suvs)
+            {
+                Console.WriteLine($"Year the Company was established: {Suv.YearCompanyEstablished}\nYear: {Suv.Year}\nMake: {Suv.Make}\nModel: {Suv.Model}\nColor: {Suv.Color}\nLogo: {Suv.Logo}");
+                Suv.Drive();
                 Console.WriteLine();
             }
         }

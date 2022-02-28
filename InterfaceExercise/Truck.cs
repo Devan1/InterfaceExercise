@@ -11,7 +11,7 @@ namespace InterfaceExercise
         public string Model { get; set; }
         public string Color { get; set; }
         public string Logo { get; set; }
-        public DateTime DateEstablished { get; set; }
+        public string YearCompanyEstablished { get; set; }
 
         public void Drive()
         {
